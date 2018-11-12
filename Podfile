@@ -18,4 +18,5 @@ target 'Quizes' do
   end
 
   pod 'AWSMobileClient', '~> 2.6.13'
+  pod 'AWSDynamoDB', '~> 2.6.13'
 end

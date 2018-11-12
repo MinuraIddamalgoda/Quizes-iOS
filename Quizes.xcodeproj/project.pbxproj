@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A15C9A321999D4E00E8E242 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A15C9A221999D4E00E8E242 /* awsconfiguration.json */; };
 		0A40A345219976520007B8D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A344219976520007B8D3 /* AppDelegate.swift */; };
 		0A40A347219976520007B8D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A346219976520007B8D3 /* ViewController.swift */; };
 		0A40A34A219976520007B8D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A40A348219976520007B8D3 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		0A40A352219976540007B8D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A40A350219976540007B8D3 /* LaunchScreen.storyboard */; };
 		0A40A35D219976540007B8D3 /* QuizesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A35C219976540007B8D3 /* QuizesTests.swift */; };
 		0A40A368219976540007B8D3 /* QuizesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A367219976540007B8D3 /* QuizesUITests.swift */; };
+		0A69991D2199A21C00057AD5 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69991C2199A21C00057AD5 /* Questions.swift */; };
 		129729F1DAE5AA6EB7596AFB /* Pods_QuizesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDD14CB0870623E3C8C2A9A /* Pods_QuizesTests.framework */; };
 		515A4721A6492F8196FBDFAC /* Pods_QuizesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CFC2D023F6AA787064BE0B /* Pods_QuizesUITests.framework */; };
 		C31D112B3566FBC1FB338163 /* Pods_Quizes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5800D44A177B5E1AD27139 /* Pods_Quizes.framework */; };
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A15C9A221999D4E00E8E242 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		0A40A341219976520007B8D3 /* Quizes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A40A344219976520007B8D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A40A346219976520007B8D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		0A40A367219976540007B8D3 /* QuizesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizesUITests.swift; sourceTree = "<group>"; };
 		0A40A369219976540007B8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A40A37721997B150007B8D3 /* CREDITS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CREDITS.md; sourceTree = "<group>"; };
+		0A69991C2199A21C00057AD5 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		17BBA9E8789554AEFF7551B2 /* Pods-QuizesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizesTests/Pods-QuizesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EF1311E592AF59762F8532F /* Pods-QuizesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizesUITests/Pods-QuizesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DDD14CB0870623E3C8C2A9A /* Pods_QuizesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,8 @@
 		0A40A343219976520007B8D3 /* Quizes */ = {
 			isa = PBXGroup;
 			children = (
+				0A69991C2199A21C00057AD5 /* Questions.swift */,
+				0A15C9A221999D4E00E8E242 /* awsconfiguration.json */,
 				0A40A344219976520007B8D3 /* AppDelegate.swift */,
 				0A40A346219976520007B8D3 /* ViewController.swift */,
 				0A40A348219976520007B8D3 /* Main.storyboard */,
@@ -278,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A15C9A321999D4E00E8E242 /* awsconfiguration.json in Resources */,
 				0A40A352219976540007B8D3 /* LaunchScreen.storyboard in Resources */,
 				0A40A34F219976540007B8D3 /* Assets.xcassets in Resources */,
 				0A40A34A219976520007B8D3 /* Main.storyboard in Resources */,
@@ -356,6 +363,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quizes/Pods-Quizes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -364,6 +372,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A40A347219976520007B8D3 /* ViewController.swift in Sources */,
+				0A69991D2199A21C00057AD5 /* Questions.swift in Sources */,
 				0A40A34D219976520007B8D3 /* Quizes.xcdatamodeld in Sources */,
 				0A40A345219976520007B8D3 /* AppDelegate.swift in Sources */,
 			);
@@ -588,7 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.minuraiddamalgoda.Quizes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -607,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.minuraiddamalgoda.Quizes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

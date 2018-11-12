@@ -12,6 +12,11 @@
   "IdentityManager": {
     "Default": {}
   },
+  "DynamoDBObjectMapper": {
+    "Default": {
+      "Region": "ap-southeast-2"
+    }
+  },
   "PinpointAnalytics": {
     "Default": {
       "AppId": "c1aca3f377ce4ce190b49be73c67f692",
