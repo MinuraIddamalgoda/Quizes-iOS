@@ -49,6 +49,7 @@
 		0A40A363219976540007B8D3 /* QuizesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A40A367219976540007B8D3 /* QuizesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizesUITests.swift; sourceTree = "<group>"; };
 		0A40A369219976540007B8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A40A37721997B150007B8D3 /* CREDITS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CREDITS.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		0A40A338219976520007B8D3 = {
 			isa = PBXGroup;
 			children = (
+				0A40A37721997B150007B8D3 /* CREDITS.md */,
 				0A40A343219976520007B8D3 /* Quizes */,
 				0A40A35B219976540007B8D3 /* QuizesTests */,
 				0A40A366219976540007B8D3 /* QuizesUITests */,
