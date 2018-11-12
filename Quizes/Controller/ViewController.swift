@@ -13,14 +13,27 @@ import AWSMobileClient
 import AWSDynamoDB
 
 class ViewController: UIViewController {
+    
+    // MARK: View IBOutlets
+    @IBOutlet weak var questionTextField: UITextView!
+    @IBOutlet weak var headerImageView: UIImageView!
 
+    // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        createQuestion()
+        //createQuestion()
     }
 
+    func updateUI(question: Questions) {
+        
+    }
+    
+    func updateFromDDB() {
+        
+    }
+    
     func createQuestion() {
         let dynamoDbObjMapper = AWSDynamoDBObjectMapper.default()
         

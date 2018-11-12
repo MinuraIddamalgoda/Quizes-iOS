@@ -79,6 +79,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="headerImageView" destination="diU-bh-0kk" id="shu-vq-G3b"/>
+                        <outlet property="questionTextField" destination="v9D-8V-dbx" id="jMJ-xV-GT5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

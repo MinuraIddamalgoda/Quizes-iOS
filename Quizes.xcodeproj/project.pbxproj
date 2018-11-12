@@ -122,13 +122,13 @@
 		0A40A343219976520007B8D3 /* Quizes */ = {
 			isa = PBXGroup;
 			children = (
+				0ABB4361219A1E3D00429BA5 /* View */,
+				0ABB4360219A1E3400429BA5 /* Controller */,
+				0ABB435F219A1E2A00429BA5 /* Model */,
 				0A69991C2199A21C00057AD5 /* Questions.swift */,
 				0A15C9A221999D4E00E8E242 /* awsconfiguration.json */,
 				0A40A344219976520007B8D3 /* AppDelegate.swift */,
-				0A40A346219976520007B8D3 /* ViewController.swift */,
-				0A40A348219976520007B8D3 /* Main.storyboard */,
 				0A40A34E219976540007B8D3 /* Assets.xcassets */,
-				0A40A350219976540007B8D3 /* LaunchScreen.storyboard */,
 				0A40A353219976540007B8D3 /* Info.plist */,
 				0A40A34B219976520007B8D3 /* Quizes.xcdatamodeld */,
 			);
@@ -151,6 +151,30 @@
 				0A40A369219976540007B8D3 /* Info.plist */,
 			);
 			path = QuizesUITests;
+			sourceTree = "<group>";
+		};
+		0ABB435F219A1E2A00429BA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0ABB4360219A1E3400429BA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A40A346219976520007B8D3 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0ABB4361219A1E3D00429BA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A40A348219976520007B8D3 /* Main.storyboard */,
+				0A40A350219976540007B8D3 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3D0F54F7CE52368F4F1795FC /* Frameworks */ = {
