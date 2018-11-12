@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,47 +15,67 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quizes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49J-nE-r22">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Quizzes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhE-gU-xYt">
-                                <rect key="frame" x="102.5" y="260" width="170.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-8V-dbx">
-                                <rect key="frame" x="8" y="304" width="359" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-3o-zhR">
-                                <rect key="frame" x="51" y="599" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="True"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S79-68-uqI">
-                                <rect key="frame" x="217" y="599" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="False"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CSf-Bc-qCH" userLabel="UI SV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-1234" translatesAutoresizingMaskIntoConstraints="NO" id="diU-bh-0kk" userLabel="HeaderImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="276.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IE9-FS-Lue" userLabel="TextHeadingButtons SV">
+                                        <rect key="frame" x="0.0" y="284.5" width="320" height="283.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quizzes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhE-gU-xYt" userLabel="HeadingLabel">
+                                                <rect key="frame" x="75" y="0.0" width="170.5" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dhq-Ep-5ud" userLabel="TextButtons SV">
+                                                <rect key="frame" x="0.0" y="68" width="320" height="215.5"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-8V-dbx" userLabel="QuestionTextField">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-oh-psE" userLabel="TrueFalse SV">
+                                                        <rect key="frame" x="0.0" y="189" width="320" height="26.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-3o-zhR" userLabel="TrueButton">
+                                                                <rect key="frame" x="0.0" y="0.0" width="156" height="26.5"/>
+                                                                <state key="normal" title="True"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S79-68-uqI" userLabel="FalseButton">
+                                                                <rect key="frame" x="164" y="0.0" width="156" height="26.5"/>
+                                                                <state key="normal" title="False"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="0dS-oh-psE" secondAttribute="height" multiplier="359:30" id="3bb-di-pWw"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IE9-FS-Lue" secondAttribute="height" multiplier="375:332" id="BEb-6j-R1B"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="49J-nE-r22" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Zw-y3-gPE"/>
-                            <constraint firstItem="49J-nE-r22" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BiL-G5-PIi"/>
-                            <constraint firstItem="AhE-gU-xYt" firstAttribute="top" secondItem="49J-nE-r22" secondAttribute="bottom" constant="8" id="daS-MF-g3h"/>
-                            <constraint firstItem="49J-nE-r22" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kde-C2-GtO"/>
-                            <constraint firstItem="v9D-8V-dbx" firstAttribute="top" secondItem="AhE-gU-xYt" secondAttribute="bottom" constant="8" id="kxn-ml-TJ1"/>
-                            <constraint firstItem="AhE-gU-xYt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q3Y-rk-oQ9"/>
-                            <constraint firstItem="v9D-8V-dbx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="utB-IL-Qw7"/>
-                            <constraint firstItem="49J-nE-r22" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vVo-rz-MA4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v9D-8V-dbx" secondAttribute="trailing" constant="8" id="zmH-GV-lRB"/>
+                            <constraint firstItem="CSf-Bc-qCH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PBp-NC-EN4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CSf-Bc-qCH" secondAttribute="bottom" id="S0k-Dz-B2M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CSf-Bc-qCH" secondAttribute="trailing" id="T00-hz-M5r"/>
+                            <constraint firstItem="CSf-Bc-qCH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cEL-D5-fIk"/>
+                            <constraint firstItem="CSf-Bc-qCH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="u7T-Kj-PvH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,4 +85,7 @@
             <point key="canvasLocation" x="-79.200000000000003" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image-1234" width="5816" height="3877"/>
+    </resources>
 </document>
