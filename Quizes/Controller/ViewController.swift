@@ -18,19 +18,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var headerImageView: UIImageView!
     
-    // MARK: View IBActions
+    // MARK: Data structs
+    var questionsList = [Questions]()
+    var imageList = [String: UIImage]()
+    
+    // MARK: AWS DDB Instance vars
+    var ddbObjMapper = AWSDynamoDBObjectMapper.default()
+    
+    // MARK: - View IBActions
     @IBAction func onTruePressed(_ sender: UIButton) {
         updateAllFromDDB()
+        updateUI(question: questionsList[0])
     }
-    
-    // MARK: Data structs
-    var questionList = [Question]()
-    var questionsList = [Questions]()
-    
-    // MARK: AWSDDB Instance vars
-    var ddbObjMapper = AWSDynamoDBObjectMapper.default()
 
-    // MARK: Methods
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,15 +41,32 @@ class ViewController: UIViewController {
     
     // Gets the header image given a url and adds it to the QuestionList
     // array and returns true if successful
-    func getHeaderImage(urlStr _: String) -> Bool {
+    func getHeaderImage(urlStr: String, questions: Questions) -> Bool {
+        if urlStr == "nil" {
+            return false
+        }
+        
+        if let url = URL(string: urlStr) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        // Can force unwrap questions._qID as the urlStr above is not  nil
+                        // Can force unwrap UIImage here as "error" image is saved locally with app
+                        self.imageList[questions._qId!] = UIImage(data: data) ?? UIImage(named: "error")!
+                    }
+                }
+            }
+        }
+        
         return true
     }
 
-    func updateUI(question: Question) {
+    func updateUI(question: Questions) {
         // No need to check if image downloaded here as it's performed
         // in getHeaderImage()
         self.questionTextField.text = question._qText
-        self.headerImageView.image = question.headerImage
+        self.headerImageView.contentMode = .scaleAspectFill
+        self.headerImageView.image = imageList[question._qId!]
     }
     
     func updateAllFromDDB() {
@@ -78,8 +96,10 @@ class ViewController: UIViewController {
             return()
         })
         
-        for question in questionsList {
-            print("Item ID: \(String(describing: question._qId))")
+        for questions in questionsList {
+            if !(getHeaderImage(urlStr: questions._qImage ?? "nil", questions: questions)) {
+                print("Error in downloading image \(String(describing: questions._qImage))")
+            }
         }
         
         activityIndicator.stopAnimating()
@@ -92,10 +112,10 @@ class ViewController: UIViewController {
         // Creating a new question
         let question: Questions = Questions()
         question._userId = AWSIdentityManager.default().identityId
-        // Why does casting a date to an int need to be this difficult????
         question._qDateAdded = NSNumber(value: Int(Date().timeIntervalSince1970))
         question._qAnswer = true
         question._qId = UUID().uuidString
+        // Why does casting a date to an int need to be this difficult????
         question._qImage = "https://images.unsplash.com/photo-1504670732632-321700b02c35?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7d1984f6730d5756bfcd2f76f52c9cd&auto=format&fit=crop&w=634&q=80"
         question._qText = "Is this a cool app?"
 

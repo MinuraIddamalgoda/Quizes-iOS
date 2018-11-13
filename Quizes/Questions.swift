@@ -25,6 +25,19 @@ class Questions: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _qImage: String?
     var _qText: String?
     
+//    init(userId: String?, dateAdded: NSNumber?, answer: NSNumber?, id: String?, image: String?, text: String?) {
+//        self._userId = userId
+//        self._qDateAdded = dateAdded
+//        self._qAnswer = answer
+//        self._qId = id
+//        self._qImage = image
+//        self._qText = text
+//    }
+//
+//    required init!(coder: NSCoder!) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     class func dynamoDBTableName() -> String {
 
         return "quizesios-mobilehub-70694695-Questions"
