@@ -17,6 +17,7 @@
 		0A40A35D219976540007B8D3 /* QuizesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A35C219976540007B8D3 /* QuizesTests.swift */; };
 		0A40A368219976540007B8D3 /* QuizesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40A367219976540007B8D3 /* QuizesUITests.swift */; };
 		0A69991D2199A21C00057AD5 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69991C2199A21C00057AD5 /* Questions.swift */; };
+		0ABB4363219B703000429BA5 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB4362219B703000429BA5 /* Question.swift */; };
 		129729F1DAE5AA6EB7596AFB /* Pods_QuizesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DDD14CB0870623E3C8C2A9A /* Pods_QuizesTests.framework */; };
 		515A4721A6492F8196FBDFAC /* Pods_QuizesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CFC2D023F6AA787064BE0B /* Pods_QuizesUITests.framework */; };
 		C31D112B3566FBC1FB338163 /* Pods_Quizes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5800D44A177B5E1AD27139 /* Pods_Quizes.framework */; };
@@ -57,6 +58,7 @@
 		0A40A369219976540007B8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A40A37721997B150007B8D3 /* CREDITS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CREDITS.md; sourceTree = "<group>"; };
 		0A69991C2199A21C00057AD5 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		0ABB4362219B703000429BA5 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		17BBA9E8789554AEFF7551B2 /* Pods-QuizesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizesTests/Pods-QuizesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EF1311E592AF59762F8532F /* Pods-QuizesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizesUITests/Pods-QuizesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DDD14CB0870623E3C8C2A9A /* Pods_QuizesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 		0ABB435F219A1E2A00429BA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0ABB4362219B703000429BA5 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ABB4363219B703000429BA5 /* Question.swift in Sources */,
 				0A40A347219976520007B8D3 /* ViewController.swift in Sources */,
 				0A69991D2199A21C00057AD5 /* Questions.swift in Sources */,
 				0A40A34D219976520007B8D3 /* Quizes.xcdatamodeld in Sources */,
