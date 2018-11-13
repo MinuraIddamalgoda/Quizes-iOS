@@ -49,6 +49,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-3o-zhR" userLabel="TrueButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="26.5"/>
                                                                 <state key="normal" title="True"/>
+                                                                <connections>
+                                                                    <action selector="onTruePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTt-79-rXI"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S79-68-uqI" userLabel="FalseButton">
                                                                 <rect key="frame" x="164" y="0.0" width="156" height="26.5"/>
