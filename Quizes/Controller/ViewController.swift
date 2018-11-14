@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     // MARK: View IBOutlets
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var uiStackView: UIStackView!
     
     // MARK: Data structs
     var questionsList = [Questions]()
@@ -27,16 +28,24 @@ class ViewController: UIViewController {
     
     // MARK: - View IBActions
     @IBAction func onTruePressed(_ sender: UIButton) {
-        updateAllFromDDB()
+//        updateAllFromDDB()
         updateUI(question: questionsList[0])
     }
 
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Setting up remaining UI elements programatically
+        questionTextField.layer.cornerRadius = 5
         
-        updateAllFromDDB()
+        uiStackView.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.alpha = 0.70
+        view.insertSubview(blurEffectView, belowSubview: uiStackView)
+        
+        createDummyQuestion()
     }
     
     // Gets the header image given a url and adds it to the QuestionList
@@ -66,6 +75,7 @@ class ViewController: UIViewController {
         // in getHeaderImage()
         self.questionTextField.text = question._qText
         self.headerImageView.contentMode = .scaleAspectFill
+        
         self.headerImageView.image = imageList[question._qId!]
     }
     
@@ -112,12 +122,12 @@ class ViewController: UIViewController {
         // Creating a new question
         let question: Questions = Questions()
         question._userId = AWSIdentityManager.default().identityId
-        question._qDateAdded = NSNumber(value: Int(Date().timeIntervalSince1970))
-        question._qAnswer = true
-        question._qId = UUID().uuidString
         // Why does casting a date to an int need to be this difficult????
-        question._qImage = "https://images.unsplash.com/photo-1504670732632-321700b02c35?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c7d1984f6730d5756bfcd2f76f52c9cd&auto=format&fit=crop&w=634&q=80"
-        question._qText = "Is this a cool app?"
+        question._qDateAdded = NSNumber(value: Int(Date().timeIntervalSince1970))
+        question._qAnswer = false
+        question._qId = UUID().uuidString
+        question._qImage = "https://images.unsplash.com/photo-1532581291347-9c39cf10a73c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60c3b92d51f407ac2d0a8a42417053df&auto=format&fit=crop&w=1650&q=80"
+        question._qText = "Is the capital of Alaska named Fairbanks?"
 
         // Saving the question
         dynamoDbObjMapper.save(question) {

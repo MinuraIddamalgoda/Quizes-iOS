@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Quizes
 
 class QuizesTests: XCTestCase {
@@ -17,6 +18,10 @@ class QuizesTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testAwsConnection() {
+        
     }
 
     func testExample() {
