@@ -26,10 +26,16 @@ class ViewController: UIViewController {
     // MARK: AWS DDB Instance vars
     var ddbObjMapper = AWSDynamoDBObjectMapper.default()
     
+    // MARK: Misc. vars
+    var currentIndex = 0;
+    
     // MARK: - View IBActions
     @IBAction func onTruePressed(_ sender: UIButton) {
-//        updateAllFromDDB()
-        updateUI(question: questionsList[0])
+        updateAllFromDDB()
+
+        print("True pressed, fetching ")
+        updateUI(question: questionsList[getNextIndex()])
+//        updateUI(question: questionsList[2])
     }
 
     // MARK: - Methods
@@ -45,7 +51,7 @@ class ViewController: UIViewController {
         blurEffectView.alpha = 0.70
         view.insertSubview(blurEffectView, belowSubview: uiStackView)
         
-        createDummyQuestion()
+        updateAllFromDDB()
     }
     
     // Gets the header image given a url and adds it to the QuestionList
@@ -66,8 +72,13 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
         return true
+    }
+    
+    func getNextIndex() -> Int {
+        let newIndex = (self.questionsList.count - 1) - currentIndex
+        self.currentIndex = self.currentIndex + 1
+        return abs(newIndex)
     }
 
     func updateUI(question: Questions) {
@@ -75,21 +86,18 @@ class ViewController: UIViewController {
         // in getHeaderImage()
         self.questionTextField.text = question._qText
         self.headerImageView.contentMode = .scaleAspectFill
-        
-        self.headerImageView.image = imageList[question._qId!]
+        UIView.transition(
+            with: headerImageView,
+            duration: 0.5,
+            options: .transitionCrossDissolve,
+            animations: {
+                self.headerImageView.image = self.imageList[question._qId!]
+            },
+            completion: nil
+        )
     }
     
     func updateAllFromDDB() {
-        var activityIndicator = UIActivityIndicatorView()
-        
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        activityIndicator.style = .gray
-        activityIndicator.center = self.view.center
-        self.view.addSubview(activityIndicator)
-        
-        activityIndicator.startAnimating()
-        activityIndicator.backgroundColor = UIColor.white
-        
         // Perform get all
         let scanExpr = AWSDynamoDBScanExpression()
         // Limiting the number of items returned so I don't go over quota
@@ -111,9 +119,6 @@ class ViewController: UIViewController {
                 print("Error in downloading image \(String(describing: questions._qImage))")
             }
         }
-        
-        activityIndicator.stopAnimating()
-        activityIndicator.hidesWhenStopped = true
     }
     
     func createDummyQuestion() {
