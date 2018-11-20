@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CSf-Bc-qCH" userLabel="UI SV">
-                                <rect key="frame" x="8" y="293" width="304" height="267"/>
+                                <rect key="frame" x="8" y="293" width="304" height="217"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IE9-FS-Lue" userLabel="TextHeadingButtons SV">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="267"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="217"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quizzes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhE-gU-xYt" userLabel="HeadingLabel">
                                                 <rect key="frame" x="67" y="0.0" width="170.5" height="60"/>
@@ -34,16 +34,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dhq-Ep-5ud" userLabel="TextButtons SV">
-                                                <rect key="frame" x="0.0" y="68" width="304" height="199"/>
+                                                <rect key="frame" x="0.0" y="68" width="304" height="149"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Is Melbourne the world's coolest city?" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9D-8V-dbx" userLabel="QuestionTextField">
-                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="165.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="115.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-oh-psE" userLabel="TrueFalse SV">
-                                                        <rect key="frame" x="0.0" y="173.5" width="304" height="25.5"/>
+                                                        <rect key="frame" x="0.0" y="123.5" width="304" height="25.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-3o-zhR" userLabel="TrueButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="25.5"/>
@@ -76,7 +76,7 @@
                         <constraints>
                             <constraint firstItem="diU-bh-0kk" firstAttribute="centerX" secondItem="CSf-Bc-qCH" secondAttribute="centerX" id="0Rl-5X-7Bi"/>
                             <constraint firstItem="CSf-Bc-qCH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="273" id="6Cq-50-wPG"/>
-                            <constraint firstItem="CSf-Bc-qCH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-8" id="C77-8r-X1d"/>
+                            <constraint firstItem="CSf-Bc-qCH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-58" id="C77-8r-X1d"/>
                             <constraint firstItem="CSf-Bc-qCH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uwk-so-niI"/>
                             <constraint firstItem="diU-bh-0kk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VGp-d3-ehO"/>
                             <constraint firstItem="diU-bh-0kk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VKn-bm-j0X"/>

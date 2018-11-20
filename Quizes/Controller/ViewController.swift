@@ -14,11 +14,15 @@ import AWSDynamoDB
 
 class ViewController: UIViewController {
     
-    // MARK: enums
+    // MARK: Enums
     enum CardState {
         case expanded
         case collapsed
     }
+    
+    // MARK: Constants
+    let cardHeight: CGFloat = 600
+    let cardHandleAreaHeight: CGFloat = 50
     
     // MARK: View IBOutlets
     @IBOutlet weak var questionTextField: UITextView!
@@ -33,7 +37,7 @@ class ViewController: UIViewController {
     
     // MARK: Data structs
     var questionsList = [Questions]()
-    // Dict is question ID num as key and image as value
+    // Dict is question ID num as key and its corresponding image as value
     var imageList = [String: UIImage]()
     
     // MARK: AWS DDB Instance vars
@@ -45,6 +49,9 @@ class ViewController: UIViewController {
     var nextState: CardState {
         return isCardVisible ? .collapsed : .expanded
     }
+    // Used to hold the animations that are happening
+    var runningAnimations = [UIViewPropertyAnimator]()
+    var animationProgressWhenInterrupted: CGFloat = 0
     
     // MARK: - View IBActions
     @IBAction func onTruePressed(_ sender: UIButton) {
@@ -68,6 +75,95 @@ class ViewController: UIViewController {
         view.insertSubview(blurEffectView, belowSubview: uiStackView)
         
         updateAllFromDDB()
+        
+        setupCard()
+    }
+    
+    func setupCard() {
+        visualEffectView = UIVisualEffectView()
+        visualEffectView.frame = self.view.frame
+        self.view.addSubview(visualEffectView)
+        
+        cardViewController = CardViewController(nibName:"CardView", bundle: nil)
+        self.addChild(cardViewController)
+        self.view.addSubview(cardViewController.view)
+        cardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - cardHandleAreaHeight, width: self.view.bounds.width, height: cardHeight)
+        cardViewController.view.clipsToBounds = true
+        
+        let tapGesutureRecog = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleCardTap(recognizer:)))
+        let panGesutureRecog = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handleCardPan(recognizer:)))
+        
+        cardViewController.handleArea.addGestureRecognizer(tapGesutureRecog)
+        cardViewController.handleArea.addGestureRecognizer(panGesutureRecog)
+    }
+    
+    @objc
+    func handleCardTap(recognizer: UITapGestureRecognizer) {
+        
+    }
+    
+    @objc
+    func handleCardPan(recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            // Start transition
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            // Update transition
+            updateIntervalTransition(fractionCompleted: 0)
+        case .ended:
+            // Continue transition
+            continueInteractiveTransition()
+        default:
+            break
+        }
+    }
+    
+    func animateTransitionIfNeeded(state: CardState, duration: TimeInterval) {
+        if runningAnimations.isEmpty {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state {
+                case .expanded:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHeight
+                case .collapsed:
+                    self.cardViewController.view.frame.origin.y = self.view.frame.height - self.cardHandleAreaHeight
+                }
+            }
+            
+            frameAnimator.addCompletion { _ in
+                self.isCardVisible = !self.isCardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+        }
+    }
+    
+    func startInteractiveTransition(state: CardState, duration: TimeInterval) {
+        if runningAnimations.isEmpty {
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        
+        for animator in runningAnimations {
+            // Sets speed to 0 and makes it interactive
+            animator.pauseAnimation()
+            // Set percentage so we can work with them
+            animationProgressWhenInterrupted = animator.fractionComplete
+        }
+    }
+    
+    func updateIntervalTransition(fractionCompleted: CGFloat) {
+        for animator in runningAnimations {
+            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+            
+        }
+    }
+    
+    func continueInteractiveTransition() {
+        for animator in runningAnimations {
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
     }
     
     // Gets the header image given a url and adds it to the QuestionList
@@ -81,6 +177,7 @@ class ViewController: UIViewController {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async {
+                        // TODO: avoid force unwrapping
                         // Can force unwrap questions._qID as the urlStr above is not  nil
                         // Can force unwrap UIImage here as "error" image is saved locally with app
                         self.imageList[questions._qId!] = UIImage(data: data) ?? UIImage(named: "error")!
