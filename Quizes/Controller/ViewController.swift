@@ -14,20 +14,37 @@ import AWSDynamoDB
 
 class ViewController: UIViewController {
     
+    // MARK: enums
+    enum CardState {
+        case expanded
+        case collapsed
+    }
+    
     // MARK: View IBOutlets
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var uiStackView: UIStackView!
     
+    // MARK: Other Controllers
+    var cardViewController: CardViewController!
+    
+    // MARK: Views
+    var visualEffectView: UIVisualEffectView!
+    
     // MARK: Data structs
     var questionsList = [Questions]()
+    // Dict is question ID num as key and image as value
     var imageList = [String: UIImage]()
     
     // MARK: AWS DDB Instance vars
     var ddbObjMapper = AWSDynamoDBObjectMapper.default()
     
     // MARK: Misc. vars
-    var currentIndex = 0;
+    var currentIndex = 0
+    var isCardVisible = false
+    var nextState: CardState {
+        return isCardVisible ? .collapsed : .expanded
+    }
     
     // MARK: - View IBActions
     @IBAction func onTruePressed(_ sender: UIButton) {
@@ -35,7 +52,6 @@ class ViewController: UIViewController {
 
         print("True pressed, fetching ")
         updateUI(question: questionsList[getNextIndex()])
-//        updateUI(question: questionsList[2])
     }
 
     // MARK: - Methods
@@ -146,4 +162,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

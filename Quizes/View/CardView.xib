@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="Quizes" customModuleProvider="target">
+            <connections>
+                <outlet property="handleArea" destination="7dL-GB-uxG" id="dci-Bg-NdQ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="4F6-Xp-Dl3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="452"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dL-GB-uxG" userLabel="Handle Area">
+                    <rect key="frame" x="0.0" y="0.0" width="344" height="45"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-S4-xkC">
+                            <rect key="frame" x="132" y="15" width="80" height="9"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="FOQ-S4-xkC" firstAttribute="top" secondItem="KFq-K2-di9" secondAttribute="top" constant="15" id="eHd-M5-wKr"/>
+                        <constraint firstItem="FOQ-S4-xkC" firstAttribute="centerX" secondItem="7dL-GB-uxG" secondAttribute="centerX" id="hkc-19-QUY"/>
+                        <constraint firstItem="FOQ-S4-xkC" firstAttribute="centerY" secondItem="7dL-GB-uxG" secondAttribute="centerY" constant="-3" id="kj9-QN-1Fi"/>
+                        <constraint firstItem="FOQ-S4-xkC" firstAttribute="leading" secondItem="KFq-K2-di9" secondAttribute="leading" constant="132" id="sF5-QR-BpE"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="KFq-K2-di9"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-BV-Fbc" userLabel="Content Area">
+                    <rect key="frame" x="0.0" y="45" width="344" height="407"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RZZ-Cb-o7d">
+                            <rect key="frame" x="8" y="8" width="328" height="391"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.79959392549999997" green="0.86390316489999996" blue="0.29157504439999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="RZZ-Cb-o7d" firstAttribute="leading" secondItem="eUz-BV-Fbc" secondAttribute="leading" constant="8" id="ABn-lR-i17"/>
+                        <constraint firstAttribute="bottom" secondItem="RZZ-Cb-o7d" secondAttribute="bottom" constant="8" id="Q3t-Ju-chD"/>
+                        <constraint firstItem="RZZ-Cb-o7d" firstAttribute="centerY" secondItem="eUz-BV-Fbc" secondAttribute="centerY" id="b74-8y-4ah"/>
+                        <constraint firstItem="RZZ-Cb-o7d" firstAttribute="top" secondItem="eUz-BV-Fbc" secondAttribute="top" constant="8" id="eyf-LG-De6"/>
+                        <constraint firstItem="RZZ-Cb-o7d" firstAttribute="centerX" secondItem="eUz-BV-Fbc" secondAttribute="centerX" id="mM4-yI-Pa0"/>
+                        <constraint firstAttribute="trailing" secondItem="RZZ-Cb-o7d" secondAttribute="trailing" constant="8" id="mTQ-9p-Zbk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7dL-GB-uxG" secondAttribute="bottom" constant="407" id="5Vp-hd-1ue"/>
+                <constraint firstItem="eUz-BV-Fbc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7rT-0Z-T5a"/>
+                <constraint firstItem="eUz-BV-Fbc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="89v-WD-3V7"/>
+                <constraint firstAttribute="trailing" secondItem="7dL-GB-uxG" secondAttribute="trailing" id="BSi-Gj-FUP"/>
+                <constraint firstItem="eUz-BV-Fbc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="J6D-ZL-mt5"/>
+                <constraint firstItem="eUz-BV-Fbc" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="M2m-Ac-xPv"/>
+                <constraint firstItem="7dL-GB-uxG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Sdu-zE-lXF"/>
+                <constraint firstItem="7dL-GB-uxG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dcX-rN-7dj"/>
+                <constraint firstItem="eUz-BV-Fbc" firstAttribute="top" secondItem="7dL-GB-uxG" secondAttribute="bottom" id="oZr-ng-kb2"/>
+                <constraint firstItem="7dL-GB-uxG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ov3-gp-7gW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="14.4" y="444.3778110944528"/>
+        </view>
+    </objects>
+</document>
